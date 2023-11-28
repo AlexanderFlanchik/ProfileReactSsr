@@ -1,0 +1,95 @@
+.profile-outer-container {
+    display: flex;
+    gap: 10px;
+    flex-grow: 2;
+}
+
+.profile {
+    padding: 25px;
+    width: 650px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid navy;
+
+    &-container {
+        padding: 5px;
+    }
+
+    &-info-container {
+        display: flex;
+        gap: 5px;
+    }
+
+    &-name {
+        font-size: xx-large;
+        color: Navy;
+        font-weight: bold;
+    }
+
+    &-age {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: large;
+    }
+
+    &-email-and-phone-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .email, .phone {
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+
+    &-zip {
+        margin-top: 20px;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    &-language {
+        margin-top: 20px;
+        font-size: medium;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    &-details-container {
+        display: flex;
+        gap: 5px;
+        margin-top: 20px;
+    }
+
+    &-details {
+        color: navy;
+        font-style: italic;
+    }
+
+    &-details-header {
+        font-weight: bold;
+    }
+
+    .categories {
+        margin-top: 5px;
+
+        span {
+            margin-right: 5px;
+            font-weight: bold;
+        }
+    }
+}
+
+.questions-list-container {
+    max-width: 450px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid navy;
+}

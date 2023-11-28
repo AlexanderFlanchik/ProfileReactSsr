@@ -1,0 +1,55 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+package profile_service.v1;
+
+message ProfileRenderRequest {
+    string avatarUrl = 1;
+    string name = 2;
+    int32 age = 3;
+    string generalInfo = 4;
+    string email = 5;
+    string phone = 6;
+    string preferredLanguage = 7;
+    string zipCode = 8;
+    Address address = 9;
+    repeated FeedbackData feedbacks = 10;
+    repeated QuestionData latest_questions = 11;
+    repeated string categories = 12;
+}
+
+message FeedbackData {
+    string customer_name = 1;
+    string feedback_body = 2;
+    google.protobuf.Timestamp timestamp = 3;
+}
+
+message QuestionData {
+    string question_id = 1;
+    string customer_name = 2;
+    google.protobuf.Timestamp timestamp = 3;
+    string text = 4;
+}
+
+message Address {
+    string city = 1;
+    string street = 2;
+}
+
+message ProfileRenderResponse {
+    string html = 1;
+    int32 status = 2;
+}
+
+message PingRequest {
+    string ping = 1;
+}
+
+message PingResponse {
+    string pong = 1;
+}
+
+service ProfileRenderService {
+    rpc render (ProfileRenderRequest) returns (ProfileRenderResponse) {}
+    rpc ping (PingRequest) returns (PingResponse) {}
+}

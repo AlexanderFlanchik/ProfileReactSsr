@@ -1,0 +1,48 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "ProfileGateway";
+
+package profile_data_service.v1;
+
+message ProfileResponse {
+    string avatar_url = 1;
+    string user_name = 2;
+    int32 user_age = 3;
+    string userGeneralInfo = 4;
+    string emailAddress = 5;
+    string phone_number = 6;
+    string preferred_language = 7;
+    string zip = 8;
+    AddressData addressData = 9;
+    repeated Feedback feedbacks = 10;
+    repeated Question latest_questions = 11;
+    repeated string categories = 12;
+}
+
+message Feedback {
+    string customer_name = 1;
+    string feedback_body = 2;
+    google.protobuf.Timestamp timestamp = 3;
+}
+
+message Question {
+    string question_id = 1;
+    string customer_name = 2;
+    google.protobuf.Timestamp timestamp = 3;
+    string text = 4;
+}
+
+message AddressData {
+    string city = 1;
+    string street = 2;
+}
+
+message ProfileRequest {
+    string userId = 1;
+}
+
+service ProfileDataService {
+    rpc GetProfileData (ProfileRequest) returns (ProfileResponse);
+}
