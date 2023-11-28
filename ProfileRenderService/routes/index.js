@@ -18,8 +18,7 @@ router.get('/profile', (req, res) => {
     } catch {
         return res.status(400).end();
     }
-    console.log("HTML renderer data:");
-    console.log(data);
+
     res.header("content-type", "text/html");
     res.send(getHtmlResponse(data));
 });
@@ -31,8 +30,6 @@ router.post('/profile', (req, res) => {
     }
 
     const data = req.body;
-    console.log("HTML renderer data:");
-    console.log(data);
     
     const htmlContent = getHtmlResponse(data);
     const response = {
