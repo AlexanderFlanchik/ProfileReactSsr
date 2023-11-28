@@ -2,8 +2,6 @@
 node_modules
 bin
 obj
-ProfileRenderService/dist
-ProfileRenderService/dist/server.js
-ProfileRenderService/dist/static/manifest.json
+/ProfileRenderService/dist
 /ProfileRenderService/dist/static/manifest.json
 /ProfileRenderService/dist/server.js
